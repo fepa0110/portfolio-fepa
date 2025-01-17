@@ -1,25 +1,57 @@
-<section class="bg-zinc-800 p-16">
-    <h1 class="font-bold text-lg">Fabricio Pafumi</h1>
-    <p class="text-base">Analista Programador Universitario</p>
-    <p class="text-base">Tengo 28 años</p>
+---
+import { Image } from "astro:assets";
+import fotoPerfil from "../assets/FotoPerfil.jpg";
+import { Timeline, type Fecha } from "../components/Timeline";
+
+const fechasHistoriaAcademica: Fecha[] = [
+	{
+		fecha: "2015",
+		titulo: "Técnico en electrónica",
+		descripcion: "Educación secundaria",
+	},
+	{
+		fecha: "2016 - 2024",
+		titulo: "Analista Programador Universitario",
+		descripcion: "UNPSJB - Puerto Madryn",
+	},
+	{
+		fecha: "2016 - ",
+		titulo: "Licenciatura en informática",
+		descripcion: "UNPSJB - Puerto Madryn",
+	},
+];
+---
+
+<section class="flex flex-row bg-zinc-800/50 px-16 py-8 rounded-lg ring-2 ring-red-700/50 shadow-lg shadow-red-700/50 items-center">
+	<Image
+		class="object-contain rounded-full drop-shadow-md"
+		src={fotoPerfil}
+		alt="Foto de perfil"
+		height="125"
+		width="125"
+	/>
+	<div class="flex flex-col pl-16">
+		<h1 class="font-bold text-3xl text-red-700">Fabricio Pafumi</h1>
+		<p class="text-base">Analista Programador Universitario</p>
+		<p class="text-base">Tengo 28 años. Me considero...</p>
+	</div>
+	<div class="flex flex-row"></div>
 </section>
 
-<h2 class="text-xl font-semibold">Experiencia laboral</h2>
+<section class="my-8">
+	<h2 class="text-xl font-semibold">Experiencia laboral</h2>
+</section>
 
-<h2 class="text-xl font-semibold">Historia Academica</h2>
+<section class="my-8">
+	<h2 class="text-xl font-semibold">Lenguajes</h2>
+</section>
 
-<ul>
-    <li>
-        Técnico en electrónica
-    </li>
+<section class="my-8">
+	<h2 class="text-xl font-semibold">Historia Academica</h2>
 
-    <li>
-        Analista Programador Universitario
-    </li>
-
-    <li>
-        Licenciatura en informática
-    </li>
-</ul>
+	<div class="w-full py-8 pl-16">
+		<Timeline fechas={fechasHistoriaAcademica} />
+	</div>
+</section>
 
 <h2 class="text-xl font-semibold">Proyectos</h2>

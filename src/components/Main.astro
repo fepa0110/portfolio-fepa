@@ -3,6 +3,7 @@ import { Image } from "astro:assets";
 import fotoPerfil from "../assets/FotoPerfil.jpg";
 import { Timeline, type Fecha } from "../components/Timeline";
 import ProgressBar from "./ProgressBar.astro";
+import Card from "./Card.astro";
 
 const fechasHistoriaAcademica: Fecha[] = [
 	{
@@ -159,4 +160,8 @@ const fechasExperienciaLaboral: Fecha[] = [
 
 <section class="my-8">
 	<h2 class="text-xl font-semibold">Proyectos</h2>
+
+	<section class="grid grid-cols-1 sm:grid-cols-3 gap-6 my-3">
+		<Card imagePath="/src/assets/TuringMind.jpg" title="TuringMind" description="Aplicación de simulación de una máquina de Turing mediante automatas." link="/"/>
+	</section>
 </section>

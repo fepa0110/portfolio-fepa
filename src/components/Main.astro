@@ -44,11 +44,11 @@ const fechasExperienciaLaboral: Fecha[] = [
 <section class="w-3/4 flex flex-col h-full place-self-center z-0">
 	<button
 		id="back-to-top"
-		class="fixed bottom-10 right-10 bg-primary text-primary-content p-2 rounded-full border-2 border-cyan-400 shadow-lg transition-opacity duration-300 opacity-0 invisible"
+		class="fixed bottom-10 right-10 bg-primary text-primary-content p-2 rounded-full border-2 border-primary shadow-lg transition-opacity duration-300 opacity-0 invisible"
 		aria-label="Back to top">
 		<svg
 			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6 text-cyan-400"
+			class="h-6 w-6 text-primary"
 			fill="none"
 			viewBox="0 0 24 24"
 			stroke="currentColor">
@@ -59,7 +59,7 @@ const fechasExperienciaLaboral: Fecha[] = [
 				d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
 		</svg>
 	</button>
-	
+
 	<section
 		class="flex sm:flex-row flex-col justify-center md:justify-start items-center mt-10 px-16 pb-8 border-primary"
 		id="biografia">
@@ -71,7 +71,7 @@ const fechasExperienciaLaboral: Fecha[] = [
 			width="125"
 		/>
 		<div class="flex flex-col pl-16">
-			<h1 class="font-bold text-3xl text-cyan-500">Fabricio Pafumi</h1>
+			<h1 class="font-bold text-3xl text-primary">Fabricio Pafumi</h1>
 			<p class="text-base">Analista Programador Universitario</p>
 			<p class="text-base"></p>
 
@@ -108,8 +108,9 @@ const fechasExperienciaLaboral: Fecha[] = [
 			</div>
 		</div>
 	</section>
-	<div class="w-full p-[1px] bg-gradient-to-r from-transparent via-cyan-600 to-transparent" />
-
+	<div
+		class="w-full p-[1px] bg-gradient-to-r from-transparent via-primary to-transparent">
+	</div>
 
 	<section class="my-8" id="experienciaLaboral">
 		<h2 class="text-xl font-semibold">Experiencia laboral</h2>
@@ -118,11 +119,12 @@ const fechasExperienciaLaboral: Fecha[] = [
 		</div>
 	</section>
 
-	<section class="py-12" id="tecnologias">
+	<section class="py-12 w-full items-center" id="tecnologias">
 		<h2 class="text-xl font-semibold">Tecnologias</h2>
 
-		<section class="grid grid-cols-1 sm:grid-cols-3 gap-16 my-3">
-			<div class="flex flex-col w-full items-center gap-3 transition-all">
+		<div
+			class="grid grid-cols-1 ml-16 items-center sm:grid-cols-3 gap-16 my-3">
+			<div class="flex flex-col w-3/5 items-center gap-5 transition-all">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					preserveAspectRatio="xMidYMid"
@@ -146,13 +148,13 @@ const fechasExperienciaLaboral: Fecha[] = [
 						fill="#5382A1"></path>
 				</svg>
 
-				<div class="w-1/2">
+				<div class="w-full">
 					<ProgressBar title="Java" progress="75%" />
 				</div>
 			</div>
 
 			<div
-				class="flex flex-col w-full items-center justify-between gap-3 transition-all">
+				class="flex flex-col w-3/5 items-center justify-between gap-5 transition-all">
 				<!--?xml version="1.0" encoding="UTF-8"?-->
 				<svg
 					width="62"
@@ -178,12 +180,12 @@ const fechasExperienciaLaboral: Fecha[] = [
 					</g>
 				</svg>
 
-				<div class="w-1/2">
+				<div class="w-full">
 					<ProgressBar title="React" progress="75%" />
 				</div>
 			</div>
 
-			<div class="flex flex-col w-full items-center gap-3 transition-all">
+			<div class="flex flex-col w-3/5 items-center gap-5 transition-all">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -221,12 +223,12 @@ const fechasExperienciaLaboral: Fecha[] = [
 					></svg
 				>
 
-				<div class="w-1/2">
+				<div class="w-full">
 					<ProgressBar title="Python" progress="45%" />
 				</div>
 			</div>
 
-			<div class="flex flex-col w-full items-center gap-3 transition-all">
+			<div class="flex flex-col w-3/5 items-center gap-3 transition-all">
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					fill="none"
@@ -246,11 +248,11 @@ const fechasExperienciaLaboral: Fecha[] = [
 					></svg
 				>
 
-				<div class="w-1/2">
+				<div class="w-full">
 					<ProgressBar title="Tailwind" progress="80%" />
 				</div>
 			</div>
-		</section>
+		</div>
 	</section>
 
 	<section class="my-8" id="historialAcademico">

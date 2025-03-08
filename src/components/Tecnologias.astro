@@ -1,0 +1,48 @@
+---
+import JavaIcon from "./icons/JavaIcon.astro";
+import PythonIcon from "./icons/PythonIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import ProgressBar from "./ProgressBar.astro";
+---
+
+<section class="pb-12 w-full items-center" id="tecnologias">
+    <h2 class="text-xl font-semibold">Tecnologias</h2>
+
+    <div
+        class="grid grid-cols-1 ml-16 items-center sm:grid-cols-3 gap-16 my-3">
+        <div class="flex flex-col w-3/5 items-center gap-5 transition-all">
+            <JavaIcon height="64" width="64"/>
+
+            <div class="w-full">
+                <ProgressBar title="Java" progress="75%" />
+            </div>
+        </div>
+
+        <div
+            class="flex flex-col w-3/5 items-center justify-between gap-5 transition-all">
+            <!--?xml version="1.0" encoding="UTF-8"?-->
+            <ReactIcon height="62" width="62"/>
+
+            <div class="w-full">
+                <ProgressBar title="React" progress="75%" />
+            </div>
+        </div>
+
+        <div class="flex flex-col w-3/5 items-center gap-5 transition-all">
+            <PythonIcon height="58" width="58"/>
+
+            <div class="w-full">
+                <ProgressBar title="Python" progress="45%" />
+            </div>
+        </div>
+
+        <div class="flex flex-col w-3/5 items-center gap-3 transition-all">
+            <TailwindIcon height="64" width="64"/>
+
+            <div class="w-full">
+                <ProgressBar title="Tailwind" progress="80%" />
+            </div>
+        </div>
+    </div>
+</section>

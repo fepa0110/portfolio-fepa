@@ -1,0 +1,19 @@
+---
+import { Timeline, type Fecha } from "./Timeline";
+
+const fechasExperienciaLaboral: Fecha[] = [
+	{
+		fecha: "mar/2022 - feb/2025",
+		titulo: "Auxiliar en los laboratorios de informática",
+		descripcion:
+			"Auxiliar de segunda en los laboratorios de informática en la UNPSJB",
+	}
+];
+---
+
+<section class="mt-8" id="experienciaLaboral">
+	<h2 class="text-xl font-semibold">Experiencia laboral</h2>
+	<div class="w-full py-8 pl-16">
+		<Timeline fechas={fechasExperienciaLaboral} />
+	</div>
+</section>

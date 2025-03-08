@@ -1,0 +1,61 @@
+---
+import Divider from "./Divider.astro";
+
+import { Image } from "astro:assets";
+
+import turingMind from "../assets/TuringMind.jpg";
+
+interface Props {
+	imagePath: string;
+	title: string;
+	description: string;
+	fecha: string;
+	link: string;
+}
+
+const images = import.meta.glob<{ default: ImageMetadata }>(
+	"/src/assets/*.{jpeg,jpg,png,gif}"
+);
+const { imagePath, title, description, fecha, link } = Astro.props;
+
+if (!images[imagePath])
+	throw new Error(
+		`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
+	);
+---
+
+<article
+	class="flex bg-background border-1 border-primary rounded-lg transition">
+	<div class="rotate-180 p-2 [writing-mode:_vertical-lr]">
+		<time
+			datetime="2022-10-10"
+			class="flex items-center justify-between gap-4 text-xs font-bold uppercase text-primary">
+			<span>{fecha}</span>
+			<span class="w-px flex-1 bg-gray-900/10"></span>
+			<!-- <span>Oct 10</span> -->
+		</time>
+	</div>
+
+	<div class="hidden sm:block sm:basis-56">
+		<!-- 		<img
+			alt=""
+			src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
+			class="aspect-square h-full w-full object-cover"
+		/> -->
+		<Image src={images[imagePath]()} alt="" height={150}/>
+	</div>
+
+	<div class="flex flex-1 flex-col justify-between">
+		<div class="border-s border-white p-4 sm:border-l-transparent sm:p-6">
+			<a href="#">
+				<h3 class="font-bold text-primary">
+					{title}
+				</h3>
+			</a>
+
+			<p class="mt-2 line-clamp-3 text-sm/relaxed text-zinc-400">
+				{description}
+			</p>
+		</div>
+	</div>
+</article>

@@ -13,58 +13,17 @@ import PythonIcon from "./icons/PythonIcon.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
 import LinkedInIcon from "./icons/LinkedInIcon.astro";
 import GithubIcon from "./icons/GithubIcon.astro";
-
-const fechasHistoriaAcademica: Fecha[] = [
-	{
-		fecha: "2015",
-		titulo: "Técnico en electrónica",
-		descripcion: "Educación secundaria",
-	},
-	{
-		fecha: "2016 - 2024",
-		titulo: "Analista Programador Universitario",
-		descripcion: "UNPSJB - Puerto Madryn",
-	},
-	{
-		fecha: "2016 - ",
-		titulo: "Licenciatura en informática",
-		descripcion: "UNPSJB - Puerto Madryn",
-	},
-];
-
-const fechasExperienciaLaboral: Fecha[] = [
-	{
-		fecha: "mar/2022 - feb/2025",
-		titulo: "Auxiliar en los laboratorios de informática",
-		descripcion:
-			"Auxiliar de segunda en los laboratorios de informática en la UNPSJB",
-	},
-	{
-		fecha: "2022 - ",
-		titulo: "",
-		descripcion: "",
-	},
-];
+import ExperienciaLaboral from "./ExperienciaLaboral.astro";
+import Tecnologias from "./Tecnologias.astro";
+import HistorialAcademico from "./HistorialAcademico.astro";
+import Proyectos from "./Proyectos.astro";
+import ButtonToTop from "./ButtonToTop.astro";
+import { Carousel } from "./carousel/Carousel";
+import EmblaCarousel from "./carousel/EmblaCarousel";
+import Divider from "./Divider.astro";
 ---
 
 <section class="w-3/4 flex flex-col h-full place-self-center z-0">
-	<button
-		id="back-to-top"
-		class="fixed bottom-10 right-10 bg-primary text-primary-content p-2 rounded-full border-2 border-primary shadow-lg transition-opacity duration-300 opacity-0 invisible"
-		aria-label="Back to top">
-		<svg
-			xmlns="http://www.w3.org/2000/svg"
-			class="h-6 w-6 text-primary"
-			fill="none"
-			viewBox="0 0 24 24"
-			stroke="currentColor">
-			<path
-				stroke-linecap="round"
-				stroke-linejoin="round"
-				stroke-width="2"
-				d="M5 10l7-7m0 0l7 7m-7-7v18"></path>
-		</svg>
-	</button>
 
 	<section
 		class="flex sm:flex-row flex-col justify-center md:justify-start items-center mt-10 px-16 pb-8 border-primary"
@@ -94,76 +53,14 @@ const fechasExperienciaLaboral: Fecha[] = [
 			</div>
 		</div>
 	</section>
-	<div
-		class="w-full p-[1px] bg-gradient-to-r from-transparent via-primary to-transparent">
-	</div>
 
-	<section class="my-8" id="experienciaLaboral">
-		<h2 class="text-xl font-semibold">Experiencia laboral</h2>
-		<div class="w-full py-8 pl-16">
-			<Timeline fechas={fechasExperienciaLaboral} />
-		</div>
-	</section>
+	<Divider />
 
-	<section class="py-12 w-full items-center" id="tecnologias">
-		<h2 class="text-xl font-semibold">Tecnologias</h2>
+	<ExperienciaLaboral />
 
-		<div
-			class="grid grid-cols-1 ml-16 items-center sm:grid-cols-3 gap-16 my-3">
-			<div class="flex flex-col w-3/5 items-center gap-5 transition-all">
-				<JavaIcon height="64" width="64"/>
+	<Tecnologias />
 
-				<div class="w-full">
-					<ProgressBar title="Java" progress="75%" />
-				</div>
-			</div>
+	<HistorialAcademico />
 
-			<div
-				class="flex flex-col w-3/5 items-center justify-between gap-5 transition-all">
-				<!--?xml version="1.0" encoding="UTF-8"?-->
-				<ReactIcon height="62" width="62"/>
-
-				<div class="w-full">
-					<ProgressBar title="React" progress="75%" />
-				</div>
-			</div>
-
-			<div class="flex flex-col w-3/5 items-center gap-5 transition-all">
-				<PythonIcon height="58" width="58"/>
-
-				<div class="w-full">
-					<ProgressBar title="Python" progress="45%" />
-				</div>
-			</div>
-
-			<div class="flex flex-col w-3/5 items-center gap-3 transition-all">
-				<TailwindIcon height="64" width="64"/>
-
-				<div class="w-full">
-					<ProgressBar title="Tailwind" progress="80%" />
-				</div>
-			</div>
-		</div>
-	</section>
-
-	<section class="my-8" id="historialAcademico">
-		<h2 class="text-xl font-semibold">Historial Academico</h2>
-
-		<div class="w-full py-8 pl-16">
-			<Timeline fechas={fechasHistoriaAcademica} />
-		</div>
-	</section>
-
-	<section class="my-8" id="proyectos">
-		<h2 class="text-xl font-semibold">Proyectos</h2>
-
-		<section class="grid grid-cols-1 sm:grid-cols-3 gap-6 my-3">
-			<Card
-				imagePath="/src/assets/TuringMind.jpg"
-				title="TuringMind"
-				description="Aplicación de simulación de una máquina de Turing mediante automatas."
-				link="/"
-			/>
-		</section>
-	</section>
+	<Proyectos />
 </section>

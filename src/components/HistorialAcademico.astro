@@ -1,0 +1,29 @@
+---
+import { Timeline, type Fecha } from "./Timeline";
+
+const fechasHistoriaAcademica: Fecha[] = [
+	{
+		fecha: "2015",
+		titulo: "Técnico en electrónica",
+		descripcion: "Educación secundaria",
+	},
+	{
+		fecha: "2016 - 2024",
+		titulo: "Analista Programador Universitario",
+		descripcion: "UNPSJB - Puerto Madryn",
+	},
+	{
+		fecha: "2016 - ",
+		titulo: "Licenciatura en informática",
+		descripcion: "UNPSJB - Puerto Madryn",
+	},
+];
+---
+
+<section class="my-8" id="historialAcademico">
+	<h2 class="text-xl font-semibold">Historial Academico</h2>
+
+	<div class="w-full py-8 pl-16">
+		<Timeline fechas={fechasHistoriaAcademica} />
+	</div>
+</section>

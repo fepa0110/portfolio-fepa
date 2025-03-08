@@ -1,6 +1,7 @@
 ---
+import ButtonToTop from "../components/ButtonToTop.astro";
 import Header from "../components/Header.astro";
-import './src/styles/global.css'
+import "./src/styles/global.css";
 ---
 
 <!doctype html>
@@ -25,11 +26,11 @@ import './src/styles/global.css'
 
 		function toggleBackToTopButton() {
 			if (window.scrollY > 300) {
-				backToTopButton.classList.remove("opacity-0", "invisible");
-				backToTopButton.classList.add("opacity-100", "visible");
+				backToTopButton!!.classList.remove("opacity-0", "invisible");
+				backToTopButton!!.classList.add("opacity-100", "visible");
 			} else {
-				backToTopButton.classList.add("opacity-0", "invisible");
-				backToTopButton.classList.remove("opacity-100", "visible");
+				backToTopButton!!.classList.add("opacity-0", "invisible");
+				backToTopButton!!.classList.remove("opacity-100", "visible");
 			}
 		}
 
@@ -41,9 +42,11 @@ import './src/styles/global.css'
 		}
 
 		window.addEventListener("scroll", toggleBackToTopButton);
-		backToTopButton.addEventListener("click", scrollToTop);
+		backToTopButton!!.addEventListener("click", scrollToTop);
 	</script>
+	
 	<body class="w-full h-full bg-zinc-900 text-slate-300 px-8">
+		<ButtonToTop />
 		<slot />
 	</body>
 </html>

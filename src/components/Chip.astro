@@ -1,0 +1,15 @@
+---
+import TailwindIcon from "./icons/TailwindIcon.astro";
+import { type ReactNode } from "react";
+
+interface Props {
+    label: string;
+}
+
+const { label } = Astro.props;
+---
+
+<div class="flex flex-row rounded-full min-h-7 min-w-8 w-auto px-2 items-center justify-around ring-2 ring-primary">
+    <slot />
+    <span class="text-sm">{label}</span>
+</div>

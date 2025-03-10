@@ -1,27 +1,72 @@
 ---
 import Card from "./Card.astro";
+import Carousel from "./Carousel.astro";
+import Chip from "./Chip.astro";
 import Divider from "./Divider.astro";
+import PythonIcon from "./icons/PythonIcon.astro";
+import ReactIcon from "./icons/ReactIcon.astro";
+import TailwindIcon from "./icons/TailwindIcon.astro";
 import LargeCard from "./LargeCard.astro";
+
+interface Proyecto {
+	title: string;
+	description: string;
+	imagePath: string;
+	fecha: string;
+	link: string;
+}
+
+const proyectos: Proyecto[] = [
+	{
+		title: "Traxpet",
+		description: "Aplicacion de busqueda de mascotas",
+		imagePath: "/src/assets/logoTraxpet.png",
+		fecha: "2022",
+		link: "/",
+	},
+	{
+		title: "TuringMind",
+		description:
+			"Aplicación de simulación de una máquina de Turing mediante automatas.",
+		imagePath: "/src/assets/TuringMind.jpg",
+		fecha: "2022",
+		link: "/",
+	},
+];
+
+const SLIDES = Array.from(Array(4).keys());
 ---
 
 <section class="my-8" id="proyectos">
 	<h2 class="text-xl font-semibold">Proyectos</h2>
 
 	<div class="flex flex-col gap-6 w-full mt-6">
-        <LargeCard
-			title="Traxpet"
-			description=""
-			imagePath="/src/assets/TuringMind.jpg"
-			fecha="2022"
-			link="/"
-		/>
-
-		<LargeCard
-			title="TuringMind"
-			description="Aplicación de simulación de una máquina de Turing mediante automatas."
-			imagePath="/src/assets/TuringMind.jpg"
-			fecha="2022"
-			link="/"
-		/>
+		{
+			proyectos.map((proyecto) => {
+				return (
+					<LargeCard
+						title={proyecto.title}
+						description={proyecto.description}
+						imagePath={proyecto.imagePath}
+						fecha={proyecto.fecha}
+						link={proyecto.link}>
+						{/* 						<Fragment slot="images">
+							<Carousel client:load/>
+						</Fragment> */}
+						<Fragment slot="tecnologias">
+							<Chip label="React Native">
+								<ReactIcon width="22" height="22" />
+							</Chip>
+							<Chip label="Tailwind">
+								<TailwindIcon width="28" height="28" />
+							</Chip>
+							<Chip label="Python">
+								<PythonIcon width="22" height="22" />
+							</Chip>
+						</Fragment>
+					</LargeCard>
+				);
+			})
+		}
 	</div>
 </section>

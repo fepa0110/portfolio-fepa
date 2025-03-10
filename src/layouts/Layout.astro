@@ -17,34 +17,56 @@ import "./src/styles/global.css";
 			href="https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@100..900&display=swap"
 			rel="stylesheet"
 		/>
+
+		<!-- <script>
+			// On page load or when changing themes, best to add inline in `head` to avoid FOUC
+			document.documentElement.classList.toggle(
+				"dark",
+				localStorage.theme === "dark" ||
+					(!("theme" in localStorage) &&
+						window.matchMedia("(prefers-color-scheme: dark)").matches)
+			);
+
+			const themeButton = document.getElementById("toggleTheme");
+
+			function toggleThemeButton() {
+				if(localStorage.theme === "dark"){
+					localStorage.theme == "light"
+				}
+				else localStorage.theme == "dark"
+			}
+
+			themeButton!!.addEventListener("click", toggleThemeButton);
+		</script> -->
+
+		<script>
+			const backToTopButton = document.getElementById("back-to-top");
+
+			function toggleBackToTopButton() {
+				if (window.scrollY > 300) {
+					backToTopButton!!.classList.remove("opacity-0", "invisible");
+					backToTopButton!!.classList.add("opacity-100", "visible");
+				} else {
+					backToTopButton!!.classList.add("opacity-0", "invisible");
+					backToTopButton!!.classList.remove("opacity-100", "visible");
+				}
+			}
+
+			function scrollToTop() {
+				window.scrollTo({
+					top: 0,
+					behavior: "smooth",
+				});
+			}
+
+			window.addEventListener("scroll", toggleBackToTopButton);
+			backToTopButton!!.addEventListener("click", scrollToTop);
+		</script>
+
 		<meta name="generator" content={Astro.generator} />
 		<title>Fabricio Pafumi Portfolio</title>
 	</head>
 
-	<script>
-		const backToTopButton = document.getElementById("back-to-top");
-
-		function toggleBackToTopButton() {
-			if (window.scrollY > 300) {
-				backToTopButton!!.classList.remove("opacity-0", "invisible");
-				backToTopButton!!.classList.add("opacity-100", "visible");
-			} else {
-				backToTopButton!!.classList.add("opacity-0", "invisible");
-				backToTopButton!!.classList.remove("opacity-100", "visible");
-			}
-		}
-
-		function scrollToTop() {
-			window.scrollTo({
-				top: 0,
-				behavior: "smooth",
-			});
-		}
-
-		window.addEventListener("scroll", toggleBackToTopButton);
-		backToTopButton!!.addEventListener("click", scrollToTop);
-	</script>
-	
 	<body class="w-full h-full bg-zinc-900 text-slate-300 px-8">
 		<ButtonToTop />
 		<slot />

@@ -1,38 +1,26 @@
 ---
+import type { Link } from "../types/Link";
 import Card from "./Card.astro";
 import Carousel from "./Carousel.astro";
 import Chip from "./Chip.astro";
 import Divider from "./Divider.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import JavaIcon from "./icons/JavaIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
 import ReactIcon from "./icons/ReactIcon.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
 import LargeCard from "./LargeCard.astro";
+import proyectosJson from "./proyectos.json";
 
 interface Proyecto {
 	title: string;
 	description: string;
 	imagePath: string;
 	fecha: string;
-	link: string;
+	links: Link[];
 }
 
-const proyectos: Proyecto[] = [
-	{
-		title: "Traxpet",
-		description: "Aplicacion de busqueda de mascotas",
-		imagePath: "/src/assets/logoTraxpet.png",
-		fecha: "2022",
-		link: "/",
-	},
-	{
-		title: "TuringMind",
-		description:
-			"Aplicación de simulación de una máquina de Turing mediante automatas.",
-		imagePath: "/src/assets/TuringMind.jpg",
-		fecha: "2022",
-		link: "/",
-	},
-];
+const proyectos: Proyecto[] = proyectosJson;
 
 const SLIDES = Array.from(Array(4).keys());
 ---
@@ -41,32 +29,48 @@ const SLIDES = Array.from(Array(4).keys());
 	<h2 class="text-xl font-semibold">Proyectos</h2>
 
 	<div class="flex flex-col gap-6 w-full mt-6">
-		{
-			proyectos.map((proyecto) => {
-				return (
-					<LargeCard
-						title={proyecto.title}
-						description={proyecto.description}
-						imagePath={proyecto.imagePath}
-						fecha={proyecto.fecha}
-						link={proyecto.link}>
-						{/* 						<Fragment slot="images">
+		<LargeCard
+			title={proyectos[0].title}
+			description={proyectos[0].description}
+			imagePath={proyectos[0].imagePath}
+			fecha={proyectos[0].fecha}
+			links={proyectos[0].links}>
+			{
+				/* 						<Fragment slot="images">
 							<Carousel client:load/>
-						</Fragment> */}
-						<Fragment slot="tecnologias">
-							<Chip label="React Native">
-								<ReactIcon width="22" height="22" />
-							</Chip>
-							<Chip label="Tailwind">
-								<TailwindIcon width="28" height="28" />
-							</Chip>
-							<Chip label="Python">
-								<PythonIcon width="22" height="22" />
-							</Chip>
-						</Fragment>
-					</LargeCard>
-				);
-			})
-		}
+						</Fragment> */
+			}
+			<Fragment slot="tecnologias">
+				<Chip label="React Native">
+					<ReactIcon width="22" height="22" />
+				</Chip>
+				<Chip label="Tailwind">
+					<TailwindIcon width="28" height="28" />
+				</Chip>
+				<Chip label="Python">
+					<PythonIcon width="22" height="22" />
+				</Chip>
+				<Chip label="Java">
+					<JavaIcon width="22" height="22" />
+				</Chip>
+			</Fragment>
+		</LargeCard>
+		<LargeCard
+			title={proyectos[1].title}
+			description={proyectos[1].description}
+			imagePath={proyectos[1].imagePath}
+			fecha={proyectos[1].fecha}
+			links={proyectos[1].links}>
+			{
+				/* 						<Fragment slot="images">
+							<Carousel client:load/>
+						</Fragment> */
+			}
+			<Fragment slot="tecnologias">
+				<Chip label="React Native">
+					<ReactIcon width="22" height="22" />
+				</Chip>
+			</Fragment>
+		</LargeCard>
 	</div>
 </section>

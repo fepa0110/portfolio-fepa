@@ -1,0 +1,21 @@
+[
+    {
+        "title": "Traxpet",
+        "description": "Traxpet es una aplicación para la busqueda de mascotas perdidas a partir de las caracteristicas fisicas de las mismas. Las mascotas vistas son publicadas en el la aplicación para que sue dueña pueda conocer donde fue vista y poder buscarla.",
+        "imagePath": "/src/assets/logoTraxpet.png",
+        "fecha": "",
+        "links": [
+            {
+                "title": "Repositorios",
+                "url": "https://github.com/fepa0110?tab=repositories&q=traxpet"
+            }
+        ]
+    },
+    {
+        "title": "TuringMind",
+        "description": "Aplicación academica para la simulación de una máquina de Turing mediante automatas. Los automatas se cargan mediante su tabla de transiciones y pueden ser simulados sobre una cinta como en la máquina de Turing. Actualmente se encuentra en fase de pruebas en Play Store.",
+        "imagePath": "/src/assets/TuringMindIcon.png",
+        "fecha": "",
+        "links": []
+    }
+]

@@ -9,7 +9,7 @@ interface Props {
 const { label } = Astro.props;
 ---
 
-<div class="flex flex-row rounded-full min-h-7 min-w-8 w-auto px-2 items-center justify-around ring-2 ring-primary">
+<div class="flex flex-row rounded-full min-h-7 min-w-8 w-auto cursor-default items-center justify-center gap-2">
     <slot />
-    <span class="text-sm">{label}</span>
+    <span class="text-slate-500 text-xs sm:text-sm">{label}</span>
 </div>

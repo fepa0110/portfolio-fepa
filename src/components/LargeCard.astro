@@ -6,19 +6,22 @@ import { Image } from "astro:assets";
 import turingMind from "../assets/TuringMind.jpg";
 import Chip from "./Chip.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
+import GithubIcon from "./icons/GithubIcon.astro";
+import type { Link } from "../types/Link";
+import GithubSquareIcon from "./icons/GithubSquareIcon.astro";
 
 interface Props {
 	imagePath: string;
 	title: string;
 	description: string;
 	fecha: string;
-	link: string;
+	links: Link[];
 }
 
 const images = import.meta.glob<{ default: ImageMetadata }>(
 	"/src/assets/*.{jpeg,jpg,png,gif}"
 );
-const { imagePath, title, description, fecha, link } = Astro.props;
+const { imagePath, title, description, fecha, links } = Astro.props;
 
 if (!images[imagePath])
 	throw new Error(
@@ -28,8 +31,7 @@ if (!images[imagePath])
 
 <article
 	class="flex sm:flex-row sm:min-h-48 bg-background border-1 border-primary rounded-lg transition items-center min-h-40">
-	<div
-		class="items-center rotate-180 p-2 [writing-mode:_vertical-lr]">
+	<div class="items-center rotate-180 p-2 [writing-mode:_vertical-lr]">
 		<time
 			datetime="2022-10-10"
 			class="flex items-center justify-between text-xs font-bold uppercase text-primary">
@@ -38,7 +40,7 @@ if (!images[imagePath])
 	</div>
 
 	<section class="flex flex-col sm:justify-between sm:flex-row w-full py-3">
-		<div class="sm:basis-56 place-content-center">
+		<div class="sm:basis-56 place-content-center items-center">
 			<!-- <slot name="images" /> -->
 			<!-- 		<img
 				alt=""
@@ -52,22 +54,41 @@ if (!images[imagePath])
 				class="place-self-center"
 			/>
 		</div>
-
 		<div class="flex flex-1 flex-col w-full justify-between">
 			<div class="border-s p-4 border-l-transparent sm:px-6">
-				<a href="#">
-					<h3 class="font-bold text-primary">
-						{title}
-					</h3>
-				</a>
+				<h3 class="text-primary font-bold text-lg">
+					{title}
+				</h3>
 
 				<p class="mt-2 line-clamp-3 text-sm/relaxed text-zinc-400">
 					{description}
 				</p>
 			</div>
+
+			<!-- <Divider /> -->
 			<div
-				class="w-full px-6 grid grid-cols-2 md:grid-cols-4 items-center place-self-center gap-3">
+				class="w-full grid grid-cols-2 md:grid-cols-4 items-center px-8 mb-3 gap-3">
 				<slot name="tecnologias" />
+			</div>
+			<!-- <Divider /> -->
+			<div
+				class="flex flex-col content-evenly sm:flex-row w-full items-center justify-evenly pt-4 pl-8">
+				{
+					links.map((link) => {
+						return (
+							<a
+								class="flex flex-row items-center h-10 px-2 hover:scale-105 transition-all gap-2"
+								href={link.url}
+								target="_blank">
+								<i>
+									<GithubIcon width="28" height="28" />
+								</i>
+								<span class="">{link.title}</span>
+							</a>
+						);
+					})
+				}
+				<slot name="extraLinks" />
 			</div>
 		</div>
 	</section>

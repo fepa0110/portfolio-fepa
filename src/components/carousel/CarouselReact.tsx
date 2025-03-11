@@ -22,9 +22,9 @@ export default function CarouselReact({ images, width }: CarouselReactProps) {
 			showThumbs={false}
 			stopOnHover={true}
 			width={width}>
-			{images.map((image) => {
+			{images.map((image,index) => {
 				return (
-					<div className="flex h-full w-full justify-center items-center">
+					<div key={`img${image.src}${index}`} className="flex h-full w-full justify-center items-center">
 						<img
 							src={image.src}
 							width={image.width}

@@ -1,10 +1,8 @@
 ---
 import type { Link } from "../types/Link";
-import Card from "./Card.astro";
-import Carousel from "./Carousel.astro";
+import type { SlideData } from "../types/SlideData";
 import Chip from "./Chip.astro";
 import Divider from "./Divider.astro";
-import GithubIcon from "./icons/GithubIcon.astro";
 import JavaIcon from "./icons/JavaIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
 import ReactIcon from "./icons/ReactIcon.astro";
@@ -15,14 +13,12 @@ import proyectosJson from "./proyectos.json";
 interface Proyecto {
 	title: string;
 	description: string;
-	imagePath: string;
+	images: SlideData[];
 	fecha: string;
 	links: Link[];
 }
 
 const proyectos: Proyecto[] = proyectosJson;
-
-const SLIDES = Array.from(Array(4).keys());
 ---
 
 <section class="my-8" id="proyectos">
@@ -32,14 +28,9 @@ const SLIDES = Array.from(Array(4).keys());
 		<LargeCard
 			title={proyectos[0].title}
 			description={proyectos[0].description}
-			imagePath={proyectos[0].imagePath}
+			images={proyectos[0].images}
 			fecha={proyectos[0].fecha}
 			links={proyectos[0].links}>
-			{
-				/* 						<Fragment slot="images">
-							<Carousel client:load/>
-						</Fragment> */
-			}
 			<Fragment slot="tecnologias">
 				<Chip label="React Native">
 					<ReactIcon width="22" height="22" />
@@ -58,14 +49,9 @@ const SLIDES = Array.from(Array(4).keys());
 		<LargeCard
 			title={proyectos[1].title}
 			description={proyectos[1].description}
-			imagePath={proyectos[1].imagePath}
+			images={proyectos[1].images}
 			fecha={proyectos[1].fecha}
 			links={proyectos[1].links}>
-			{
-				/* 						<Fragment slot="images">
-							<Carousel client:load/>
-						</Fragment> */
-			}
 			<Fragment slot="tecnologias">
 				<Chip label="React Native">
 					<ReactIcon width="22" height="22" />

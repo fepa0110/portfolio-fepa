@@ -9,24 +9,26 @@ import TailwindIcon from "./icons/TailwindIcon.astro";
 import GithubIcon from "./icons/GithubIcon.astro";
 import type { Link } from "../types/Link";
 import GithubSquareIcon from "./icons/GithubSquareIcon.astro";
+import CarouselReact from "./carousel/CarouselReact";
+import type { SlideData } from "../types/SlideData";
 
 interface Props {
-	imagePath: string;
+	images: SlideData[];
 	title: string;
 	description: string;
 	fecha: string;
 	links: Link[];
 }
 
-const images = import.meta.glob<{ default: ImageMetadata }>(
+/* const images = import.meta.glob<{ default: ImageMetadata }>(
 	"/src/assets/*.{jpeg,jpg,png,gif}"
-);
-const { imagePath, title, description, fecha, links } = Astro.props;
+); */
+const { images, title, description, fecha, links } = Astro.props;
 
-if (!images[imagePath])
+/*if (!images[imagePath])
 	throw new Error(
 		`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
-	);
+	); */
 ---
 
 <article
@@ -40,19 +42,8 @@ if (!images[imagePath])
 	</div>
 
 	<section class="flex flex-col sm:justify-between sm:flex-row w-full py-3">
-		<div class="sm:basis-56 place-content-center items-center">
-			<!-- <slot name="images" /> -->
-			<!-- 		<img
-				alt=""
-				src="https://images.unsplash.com/photo-1609557927087-f9cf8e88de18?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1740&q=80"
-				class="aspect-square h-full w-full object-cover"
-			/> -->
-			<Image
-				src={images[imagePath]()}
-				alt=""
-				height={150}
-				class="place-self-center"
-			/>
+		<div class="sm:basis-56 place-content-center place-items-center">
+			<CarouselReact images={images} width={175} client:load/>
 		</div>
 		<div class="flex flex-1 flex-col w-full justify-between">
 			<div class="border-s p-4 border-l-transparent sm:px-6">
@@ -60,7 +51,7 @@ if (!images[imagePath])
 					{title}
 				</h3>
 
-				<p class="mt-2 line-clamp-3 text-sm/relaxed text-zinc-400">
+				<p class="mt-2 text-sm/relaxed text-zinc-400">
 					{description}
 				</p>
 			</div>
@@ -72,7 +63,7 @@ if (!images[imagePath])
 			</div>
 			<!-- <Divider /> -->
 			<div
-				class="flex flex-col content-evenly sm:flex-row w-full items-center justify-evenly pt-4 pl-8">
+				class="flex flex-col content-evenly sm:flex-row w-full items-center justify-center sm:justify-evenly sm:pt-4 sm:pl-8">
 				{
 					links.map((link) => {
 						return (

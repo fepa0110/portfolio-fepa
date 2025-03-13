@@ -21,18 +21,19 @@ import ButtonToTop from "./ButtonToTop.astro";
 import Divider from "./Divider.astro";
 import CarouselReact from "./carousel/CarouselReact";
 ---
+
 <section class="w-3/4 flex flex-col h-full place-self-center z-0">
 	<section
-		class="flex sm:flex-row flex-col justify-center md:justify-start items-center mt-10 px-16 pb-8 border-primary"
+		class="flex md:flex-row flex-col justify-center md:justify-start items-center w-full mt-10 px-12 pb-8 border-primary"
 		id="biografia">
 		<Image
-			class="object-contain drop-shadow z-0"
+			class="md:w-auto justify-self-center drop-shadow z-0 py-4 md:py-0"
 			src={fotoPerfil}
 			alt="Foto de perfil"
-			height="125"
-			width="125"
+			height="132"
+			width="132"
 		/>
-		<div class="flex flex-col pl-16">
+		<div class="flex flex-col h-full pl-0 md:pl-16 pb-3 w-full md:w-2xl">
 			<h1 class="font-bold text-3xl text-primary">Fabricio Pafumi</h1>
 			<p class="text-slate-400">Full Stack Developer</p>
 			<p class="text-slate-400">Analista Programador Universitario</p>
@@ -44,17 +45,17 @@ import CarouselReact from "./carousel/CarouselReact";
 
 			<div class="flex flex-row items-center gap-4 pt-3">
 				<a
-					class="hover:scale-105"
+					class="hover:scale-110 duration-300 transition-all"
 					href="https://github.com/fepa0110"
 					target="_blank">
-					<GithubIcon height="28" width="28" />
+					<GithubIcon height="32" width="32" />
 				</a>
 
 				<a
-					class="hover:scale-105"
+					class="hover:scale-110 duration-300 transition-all"
 					href="https://www.linkedin.com/in/fabricio-pafumi-viola/"
 					target="_blank">
-					<LinkedInIcon height="28" width="28" />
+					<LinkedInIcon height="32" width="32" />
 				</a>
 			</div>
 		</div>

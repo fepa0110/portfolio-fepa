@@ -16,19 +16,21 @@ interface Props {
 	images: SlideData[];
 	title: string;
 	description: string;
+	icon: string;
 	fecha: string;
 	links: Link[];
 }
 
-/* const images = import.meta.glob<{ default: ImageMetadata }>(
+const iconImage = import.meta.glob<{ default: ImageMetadata }>(
 	"/src/assets/*.{jpeg,jpg,png,gif}"
-); */
-const { images, title, description, fecha, links } = Astro.props;
+);
 
-/*if (!images[imagePath])
+const { images, title, description, icon, fecha, links } = Astro.props;
+
+if (!iconImage[icon])
 	throw new Error(
-		`"${imagePath}" does not exist in glob: "src/assets/*.{jpeg,jpg,png,gif}"`
-	); */
+		`"${icon}" does not exist in glob: "/src/assets/*.{jpeg,jpg,png,gif}"`
+	);
 ---
 
 <article
@@ -42,14 +44,23 @@ const { images, title, description, fecha, links } = Astro.props;
 	</div>
 
 	<section class="flex flex-col md:justify-between md:flex-row w-full py-3">
-		<div class="sm:basis-56 place-content-center place-items-center">
-			<CarouselReact images={images} width={175} client:load/>
+		<div class="flex flex-col pl-3 py-2 justify-center items-center">
+			<CarouselReact images={images} width={120} client:load />
 		</div>
 		<div class="flex flex-1 flex-col w-full justify-between">
 			<div class="border-s p-4 border-l-transparent sm:px-6">
-				<h3 class="text-primary font-bold text-lg">
-					{title}
-				</h3>
+				<div class="flex flex-row items-center gap-3 pb-2">
+					<Image
+						class="w-8 h-8"
+						src={icon}
+						alt="Foto de perfil"
+						height="22"
+						width="32"
+					/>
+					<h3 class="text-primary font-bold text-lg">
+						{title}
+					</h3>
+				</div>
 
 				<p class="mt-2 text-sm/relaxed text-zinc-400">
 					{description}

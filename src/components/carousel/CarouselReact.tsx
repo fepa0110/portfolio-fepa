@@ -12,7 +12,7 @@ export default function CarouselReact({ images, width }: CarouselReactProps) {
 	return (
 		<Carousel
 			transitionTime={1000}
-            interval={4000}
+            interval={3500}
             showArrows={false}
 			infiniteLoop={true}
 			autoPlay={true}

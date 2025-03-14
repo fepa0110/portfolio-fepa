@@ -1,22 +1,28 @@
 [
     {
         "title": "Traxpet",
-        "description": "Traxpet es una aplicación para la busqueda de mascotas perdidas a partir de las caracteristicas fisicas de las mismas. Las mascotas vistas son publicadas en el la aplicación para que sue dueña pueda conocer donde fue vista y poder buscarla.",
+        "description": "Traxpet es una aplicación para la busqueda de mascotas perdidas a partir de las caracteristicas fisicas de las mismas. Las mascotas vistas son publicadas en el la aplicación para que sue dueña pueda conocer donde fue vista y poder buscarla. Proyecto Final de la carrera de Analista Programador desarrollado con un equipo de 3 integrantes planificado mediante metodologías ágiles.",
+        "iconImg": "/src/assets/logoTraxpet.png",
         "images": [
             {
-                "src": "/logoTraxpet.png",
-                "width": 64,
-                "height": 64
+                "src": "/TraxpetHome.jpg",
+                "width": 85,
+                "height": 100
             },
             {
-                "src": "/logoTraxpet.png",
-                "width": 64,
-                "height": 64
+                "src": "/TraxpetSimilares.jpg",
+                "width": 85,
+                "height": 100
             },
             {
-                "src": "/logoTraxpet.png",
-                "width": 64,
-                "height": 64
+                "src": "/TraxpetPublicacion.jpg",
+                "width": 85,
+                "height": 100
+            },
+            {
+                "src": "/TraxpetComparacion.jpg",
+                "width": 85,
+                "height": 100
             }
         ],
         "fecha": "",
@@ -30,9 +36,11 @@
     {
         "title": "TuringMind",
         "description": "Aplicación academica para la simulación de una máquina de Turing mediante automatas. Los automatas se cargan mediante su tabla de transiciones y pueden ser simulados sobre una cinta como en la máquina de Turing. Actualmente se encuentra en fase de pruebas en Play Store.",
+        "iconImg": "/src/assets/TuringMindIcon.png",
         "images": [
-            {"src":"/TuringMindIcon.png", "width": 32, "height": 32},
-            {"src":"/TuringMind.jpg", "width": 64, "height": 64}
+            {"src":"/TuringMindSimulacion.jpg", "width": 64, "height": 64},
+            {"src":"/TuringMindCreacion.jpg", "width": 64, "height": 64},
+            {"src":"/TuringMindView.jpg", "width": 64, "height": 64}
         ],
         "fecha": "",
         "links": []

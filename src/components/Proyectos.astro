@@ -13,6 +13,7 @@ import proyectosJson from "./proyectos.json";
 interface Proyecto {
 	title: string;
 	description: string;
+	iconImg: string;
 	images: SlideData[];
 	fecha: string;
 	links: Link[];
@@ -28,6 +29,7 @@ const proyectos: Proyecto[] = proyectosJson;
 		<LargeCard
 			title={proyectos[0].title}
 			description={proyectos[0].description}
+			icon={proyectos[0].iconImg}
 			images={proyectos[0].images}
 			fecha={proyectos[0].fecha}
 			links={proyectos[0].links}>
@@ -49,6 +51,7 @@ const proyectos: Proyecto[] = proyectosJson;
 		<LargeCard
 			title={proyectos[1].title}
 			description={proyectos[1].description}
+			icon={proyectos[1].iconImg}
 			images={proyectos[1].images}
 			fecha={proyectos[1].fecha}
 			links={proyectos[1].links}>

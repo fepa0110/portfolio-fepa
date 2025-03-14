@@ -1,10 +1,12 @@
 ---
-import { Timeline, type Fecha } from "./Timeline";
+import type { Formacion } from "../types/Formacion";
+import { Timeline } from "./Timeline";
 
-const fechasExperienciaLaboral: Fecha[] = [
+const fechasExperienciaLaboral: Formacion[] = [
 	{
 		fecha: "mar/2022 - feb/2025",
 		titulo: "Auxiliar en los laboratorios de informática",
+		institucion: "Universidad Nacional de la Patagonia San Juan Bosco - Puerto Madryn",
 		descripcion:
 			"Auxiliar de segunda en los laboratorios de informática en la UNPSJB",
 	}
@@ -14,6 +16,6 @@ const fechasExperienciaLaboral: Fecha[] = [
 <section class="mt-8" id="experienciaLaboral">
 	<h2 class="text-xl font-semibold">Experiencia laboral</h2>
 	<div class="w-full py-8 pl-16">
-		<Timeline fechas={fechasExperienciaLaboral} />
+		<Timeline formaciones={fechasExperienciaLaboral} />
 	</div>
 </section>

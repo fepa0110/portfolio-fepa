@@ -1,29 +1,35 @@
 ---
-import { Timeline, type Fecha } from "./Timeline";
+import type { Formacion } from "../types/Formacion";
+import { Timeline } from "./Timeline";
 
-const fechasHistoriaAcademica: Fecha[] = [
+const fechasHistoriaAcademica: Formacion[] = [
 	{
-		fecha: "2015",
-		titulo: "Técnico en electrónica",
-		descripcion: "Educación secundaria",
+		fecha: "2016 - Actualidad",
+		titulo: "Licenciatura en informática",
+		institucion:
+			"Universidad Nacional de la Patagonia San Juan Bosco - Puerto Madryn",
+		descripcion: "",
 	},
 	{
 		fecha: "2016 - 2024",
 		titulo: "Analista Programador Universitario",
-		descripcion: "UNPSJB - Puerto Madryn",
+		institucion:
+			"Universidad Nacional de la Patagonia San Juan Bosco - Puerto Madryn",
+		descripcion: "",
 	},
 	{
-		fecha: "2016 - ",
-		titulo: "Licenciatura en informática",
-		descripcion: "UNPSJB - Puerto Madryn",
-	},
+		fecha: "2009 - 2015",
+		titulo: "Técnico en electrónica",
+		institucion: 'Escuela Politécnica N°703 "José Toschke"',
+		descripcion: "Educación secundaria",
+	}
 ];
 ---
 
-<section class="my-8" id="historialAcademico">
+<section class="mt-8" id="historialAcademico">
 	<h2 class="text-xl font-semibold">Historial Academico</h2>
 
-	<div class="w-full py-8 pl-16">
-		<Timeline fechas={fechasHistoriaAcademica} />
+	<div class="w-full pt-8 pl-16">
+		<Timeline formaciones={fechasHistoriaAcademica} />
 	</div>
 </section>

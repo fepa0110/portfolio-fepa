@@ -1,14 +1,6 @@
 ---
-import Divider from "./Divider.astro";
-
-import { Image } from "astro:assets";
-
-import turingMind from "../assets/TuringMind.jpg";
-import Chip from "./Chip.astro";
-import TailwindIcon from "./icons/TailwindIcon.astro";
 import GithubIcon from "./icons/GithubIcon.astro";
 import type { Link } from "../types/Link";
-import GithubSquareIcon from "./icons/GithubSquareIcon.astro";
 import CarouselReact from "./carousel/CarouselReact";
 import type { SlideData } from "../types/SlideData";
 
@@ -16,21 +8,11 @@ interface Props {
 	images: SlideData[];
 	title: string;
 	description: string;
-	icon: string;
 	fecha: string;
 	links: Link[];
 }
 
-const iconImage = import.meta.glob<{ default: ImageMetadata }>(
-	"/src/assets/*.{jpeg,jpg,png,gif}"
-);
-
-const { images, title, description, icon, fecha, links } = Astro.props;
-
-if (!iconImage[icon])
-	throw new Error(
-		`"${icon}" does not exist in glob: "/src/assets/*.{jpeg,jpg,png,gif}"`
-	);
+const { images, title, description, fecha, links } = Astro.props;
 ---
 
 <article
@@ -50,13 +32,9 @@ if (!iconImage[icon])
 		<div class="flex flex-1 flex-col w-full justify-between">
 			<div class="border-s p-4 border-l-transparent sm:px-6">
 				<div class="flex flex-row items-center gap-3 pb-2">
-					<Image
-						class="w-8 h-8"
-						src={icon}
-						alt="Foto de perfil"
-						height="22"
-						width="32"
-					/>
+					<slot name="icon">
+
+					</slot>
 					<h3 class="text-primary font-bold text-lg">
 						{title}
 					</h3>

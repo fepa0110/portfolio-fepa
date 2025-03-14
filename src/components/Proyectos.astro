@@ -1,8 +1,10 @@
 ---
 import type { Link } from "../types/Link";
 import type { SlideData } from "../types/SlideData";
+import { Image } from "astro:assets";
+import traxpetIcon from "../assets/logoTraxpet.png";
+import turingMindIcon from "../assets/TuringMindIcon.png";
 import Chip from "./Chip.astro";
-import Divider from "./Divider.astro";
 import JavaIcon from "./icons/JavaIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
 import ReactIcon from "./icons/ReactIcon.astro";
@@ -29,10 +31,18 @@ const proyectos: Proyecto[] = proyectosJson;
 		<LargeCard
 			title={proyectos[0].title}
 			description={proyectos[0].description}
-			icon={proyectos[0].iconImg}
 			images={proyectos[0].images}
 			fecha={proyectos[0].fecha}
 			links={proyectos[0].links}>
+			<Fragment slot="icon">
+				<Image
+					class="w-8 h-8"
+					src={traxpetIcon}
+					alt="Traxpet Icon"
+					height="22"
+					width="32"
+				/>
+			</Fragment>
 			<Fragment slot="tecnologias">
 				<Chip label="React Native">
 					<ReactIcon width="22" height="22" />
@@ -51,10 +61,18 @@ const proyectos: Proyecto[] = proyectosJson;
 		<LargeCard
 			title={proyectos[1].title}
 			description={proyectos[1].description}
-			icon={proyectos[1].iconImg}
 			images={proyectos[1].images}
 			fecha={proyectos[1].fecha}
 			links={proyectos[1].links}>
+			<Fragment slot="icon">
+				<Image
+					class="w-8 h-8"
+					src={turingMindIcon}
+					alt="TuringMind Icon"
+					height="22"
+					width="32"
+				/>
+			</Fragment>
 			<Fragment slot="tecnologias">
 				<Chip label="React Native">
 					<ReactIcon width="22" height="22" />

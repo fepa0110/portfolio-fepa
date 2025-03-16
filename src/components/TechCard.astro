@@ -10,7 +10,7 @@ const { title } = Astro.props;
 ---
 
 <div
-	class="flex flex-col w-3/5 items-center justify-between gap-5 transition-all">
+	class="flex flex-col w-3/5 items-center justify-between gap-2 transition-all">
 	<slot name="icon" />
-	<div class="mb-1 text-base font-medium dark:text-white">{title}</div>
+	<div class="text-base font-medium dark:text-white">{title}</div>
 </div>

@@ -1,6 +1,7 @@
 ---
 import CppIcon from "./icons/CppIcon.astro";
 import JavaIcon from "./icons/JavaIcon.astro";
+import KotlinIcon from "./icons/KotlinIcon.astro";
 import NextJsIcon from "./icons/NextJsIcon.astro";
 import PostgreSQLIcon from "./icons/PostgreSQLIcon.astro";
 import PythonIcon from "./icons/PythonIcon.astro";
@@ -16,7 +17,7 @@ import TechCard from "./TechCard.astro";
 	<div
 		class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ml-4 md:ml-16 items-center place-items-center content-center gap-16 my-3">
 		<section
-			class="col-span-3 grid grid-cols-subgrid place-items-center gap-3 content-between items-baseline py-3 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
+			class="col-span-3 grid grid-cols-subgrid place-items-center gap-3 content-between items-baseline pt-3 pb-5 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
 			<div class="col-start-1 col-end-4 justify-self-start px-3">
 				<span class="text-base text-primary">Frontend</span>
 			</div>
@@ -27,9 +28,15 @@ import TechCard from "./TechCard.astro";
 				</Fragment>
 			</TechCard>
 
-			<TechCard title="Tailwind CSS">
+			<TechCard title="React Native">
 				<Fragment slot="icon">
-					<TailwindIcon height="52" width="52" />
+					<ReactIcon height="52" width="52" />
+				</Fragment>
+			</TechCard>
+
+			<TechCard title="Kotlin - Android">
+				<Fragment slot="icon">
+					<KotlinIcon height="42" width="42" />
 				</Fragment>
 			</TechCard>
 
@@ -38,17 +45,23 @@ import TechCard from "./TechCard.astro";
 					<NextJsIcon height="46" width="46" />
 				</Fragment>
 			</TechCard>
+
+			<TechCard title="Tailwind CSS">
+				<Fragment slot="icon">
+					<TailwindIcon height="52" width="52" />
+				</Fragment>
+			</TechCard>
 		</section>
 
 		<section
-			class="col-span-2 grid grid-cols-subgrid place-items-center content-between items-baseline py-3 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
+			class="col-span-3 grid grid-cols-subgrid place-items-center content-between items-baseline pt-3 pb-5 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
 			<div class="col-start-1 col-end-4 justify-self-start px-3">
 				<span class="text-base text-primary">Backend</span>
 			</div>
 
 			<TechCard title="C++">
 				<Fragment slot="icon">
-					<CppIcon height="48" width="48" />
+					<CppIcon height="42" width="42" />
 				</Fragment>
 			</TechCard>
 
@@ -58,7 +71,7 @@ import TechCard from "./TechCard.astro";
 				</Fragment>
 			</TechCard>
 
-			<div class="col-start-1 col-end-3">
+			<div class="">
 				<TechCard title="Python">
 					<Fragment slot="icon">
 						<PythonIcon height="52" width="52" />
@@ -68,8 +81,8 @@ import TechCard from "./TechCard.astro";
 		</section>
 
 		<section
-			class="col-span-1 grid grid-cols-subgrid place-items-center content-between items-baseline py-6 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
-			<div class="col-start-1 justify-self-start px-3">
+			class="col-span-1 grid grid-cols-subgrid place-items-center content-between items-baseline py-3 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
+			<div class="col-start-1 justify-self-start px-3 pb-1">
 				<span class="text-base text-primary">Bases de datos</span>
 			</div>
 

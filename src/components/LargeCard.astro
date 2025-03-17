@@ -35,19 +35,19 @@ const { images, title, description, fecha, links } = Astro.props;
 					<slot name="icon">
 
 					</slot>
-					<h3 class="text-primary font-bold text-lg">
+					<h3 class="text-primary font-bold text-xl">
 						{title}
 					</h3>
 				</div>
 
-				<p class="mt-2 text-sm/relaxed text-zinc-400">
+				<p class="mt-2 text-sm/relaxed text-zinc-100">
 					{description}
 				</p>
 			</div>
 
 			<!-- <Divider /> -->
 			<div
-				class="w-full grid grid-cols-2 md:grid-cols-4 items-center px-8 mb-3 gap-3">
+				class="w-full grid grid-cols-2 md:grid-cols-4 justify-items-start items-center px-8 mb-3 gap-3">
 				<slot name="tecnologias" />
 			</div>
 			<!-- <Divider /> -->

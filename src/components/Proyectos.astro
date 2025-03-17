@@ -11,6 +11,7 @@ import ReactIcon from "./icons/ReactIcon.astro";
 import TailwindIcon from "./icons/TailwindIcon.astro";
 import LargeCard from "./LargeCard.astro";
 import proyectosJson from "./proyectos.json";
+import ExpoIcon from "./icons/ExpoIcon.astro";
 
 interface Proyecto {
 	title: string;
@@ -40,14 +41,17 @@ const proyectos: Proyecto[] = proyectosJson;
 					src={traxpetIcon}
 					alt="Traxpet Icon"
 					height="22"
-					width="32"
+					width="28"
 				/>
 			</Fragment>
 			<Fragment slot="tecnologias">
 				<Chip label="React Native">
 					<ReactIcon width="22" height="22" />
 				</Chip>
-				<Chip label="Tailwind">
+				<Chip label="Expo">
+					<ExpoIcon width="20" height="20" />
+				</Chip>
+				<Chip label="Tailwind CSS">
 					<TailwindIcon width="28" height="28" />
 				</Chip>
 				<Chip label="Python">
@@ -76,6 +80,9 @@ const proyectos: Proyecto[] = proyectosJson;
 			<Fragment slot="tecnologias">
 				<Chip label="React Native">
 					<ReactIcon width="22" height="22" />
+				</Chip>
+				<Chip label="Expo">
+					<ExpoIcon width="20" height="20" />
 				</Chip>
 			</Fragment>
 		</LargeCard>

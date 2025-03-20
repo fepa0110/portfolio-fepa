@@ -43,6 +43,9 @@
             {"src":"/TuringMindView.jpg", "width": 64, "height": 64}
         ],
         "fecha": "",
-        "links": []
+        "links": [{
+            "title": "Repositorio",
+            "url": "https://github.com/fepa0110/TuringMind"
+        }]
     }
 ]

@@ -1,0 +1,35 @@
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import type { Link } from "../types/Link";
+import CarouselReact from "./carousel/CarouselReact";
+import type { SlideData } from "../types/SlideData";
+import type { Experiencia } from "../types/Experiencia";
+import type { Formacion } from "../types/Formacion";
+
+interface Props {
+	formaciones: Formacion[];
+}
+
+const { formaciones } = Astro.props;
+---
+
+<ol class="relative border-s-2 border-cyan-600">
+	{
+		formaciones.map((formacion) => {
+			return (
+				<li class="mb-10 ms-4">
+					<div class="absolute w-3 h-3 bg-cyan-600 rounded-full mt-1.5 -start-1.5 border border-cyan-600  hover:scale-125 transition-all" />
+					<time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+						{formacion.fecha}
+					</time>
+					<h3 class="text-lg font-semibold text-white">
+						{formacion.titulo}
+					</h3>
+					<p class="mb-4 text-base font-normal text-cyan-700">
+						{formacion.institucion}
+					</p>
+				</li>
+			);
+		})
+	}
+</ol>

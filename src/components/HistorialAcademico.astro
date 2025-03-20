@@ -1,6 +1,6 @@
 ---
 import type { Formacion } from "../types/Formacion";
-import { Timeline } from "./Timeline";
+import TimelineFormaciones from "./TimelineFormaciones.astro";
 
 const fechasHistoriaAcademica: Formacion[] = [
 	{
@@ -30,6 +30,6 @@ const fechasHistoriaAcademica: Formacion[] = [
 	<h2 class="text-xl font-semibold">Historial Academico</h2>
 
 	<div class="w-full pt-8 pl-16">
-		<Timeline formaciones={fechasHistoriaAcademica} />
+		<TimelineFormaciones formaciones={fechasHistoriaAcademica} />
 	</div>
 </section>

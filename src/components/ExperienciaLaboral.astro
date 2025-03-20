@@ -1,14 +1,15 @@
 ---
-import type { Formacion } from "../types/Formacion";
-import { Timeline } from "./Timeline";
+import type { Experiencia } from "../types/Experiencia";
+import TimelineExperiencias from "./TimelineExperiencias.astro";
 
-const fechasExperienciaLaboral: Formacion[] = [
+const fechasExperienciaLaboral: Experiencia[] = [
 	{
 		fecha: "mar/2022 - feb/2025",
 		titulo: "Auxiliar en los laboratorios de informática",
 		institucion: "Universidad Nacional de la Patagonia San Juan Bosco - Puerto Madryn",
-		descripcion:
-			"Auxiliar de segunda en los laboratorios de informática en la UNPSJB",
+		puesto:
+			"",
+		descripcion: "Proporcioné mantenimiento de redes, servidores y soporte técnico general en todas las áreas para garantizar un rendimiento óptimo y minimizar las interrupciones laborales."
 	}
 ];
 ---
@@ -16,6 +17,6 @@ const fechasExperienciaLaboral: Formacion[] = [
 <section class="mt-8" id="experienciaLaboral">
 	<h2 class="text-xl font-semibold">Experiencia laboral</h2>
 	<div class="w-full py-8 pl-16">
-		<Timeline formaciones={fechasExperienciaLaboral} />
+		<TimelineExperiencias experiencias={fechasExperienciaLaboral} />
 	</div>
 </section>

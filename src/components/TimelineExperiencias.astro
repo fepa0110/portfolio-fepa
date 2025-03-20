@@ -1,0 +1,39 @@
+---
+import GithubIcon from "./icons/GithubIcon.astro";
+import type { Link } from "../types/Link";
+import CarouselReact from "./carousel/CarouselReact";
+import type { SlideData } from "../types/SlideData";
+import type { Experiencia } from "../types/Experiencia";
+
+interface Props {
+	experiencias: Experiencia[];
+}
+
+const { experiencias } = Astro.props;
+---
+
+<ol class="relative border-s-2 border-cyan-600">
+	{
+		experiencias.map((experiencia) => {
+			return (
+				<li class="mb-10 ms-4">
+					<div class="flex flex-row items-center pt-1.5">
+						<div class="absolute w-3 h-3 bg-cyan-600 rounded-full -start-1.5 border border-cyan-600  hover:scale-125 transition-all" />
+						<time class="mb-1 text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+							{experiencia.fecha}
+						</time>
+					</div>
+					<h3 class="text-lg font-semibold text-white">
+						{experiencia.titulo}
+					</h3>
+					<p class="mb-4 text-base font-normal text-cyan-700">
+						{experiencia.institucion}
+					</p>
+					<p class="mb-4 text-base font-normal text-zinc-100">
+						{experiencia.descripcion}
+					</p>
+				</li>
+			);
+		})
+	}
+</ol>

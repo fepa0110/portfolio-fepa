@@ -8,6 +8,7 @@ import Tecnologias from "./Tecnologias.astro";
 import HistorialAcademico from "./HistorialAcademico.astro";
 import Proyectos from "./Proyectos.astro";
 import Divider from "./Divider.astro";
+import DocumentIcon from "./icons/DocumentIcon.astro";
 ---
 
 <section class="w-3/4 flex flex-col h-full place-self-center z-0">
@@ -44,6 +45,13 @@ import Divider from "./Divider.astro";
 					href="https://www.linkedin.com/in/fabricio-pafumi-viola/"
 					target="_blank">
 					<LinkedInIcon height="32" width="32" />
+				</a>
+				<a
+					href="/CV.pdf"
+					target="_blank"
+					class="flex flex-row items-center gap-1 rounded-lg border-2 py-1 px-3 border-slate-400 hover:scale-105 transition-all">
+					<DocumentIcon height="18" width="18" />
+					<span>CV</span>
 				</a>
 			</div>
 		</div>

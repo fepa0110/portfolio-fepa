@@ -16,6 +16,8 @@ import TailwindIcon from "../icons/TailwindIcon.astro";
 import LargeCard from "../LargeCard.astro";
 
 import proyectosJson from "../../data/proyectos.json";
+import ApacheIcon from "../icons/ApacheIcon.astro";
+import DockerIcon from "../icons/DockerIcon.astro";
 
 interface Proyecto {
 	title: string;
@@ -63,6 +65,12 @@ const proyectos: Proyecto[] = proyectosJson;
 				</Chip>
 				<Chip label="Java">
 					<JavaIcon width="22" height="22" />
+				</Chip>
+				<Chip label="DerbySQL">
+					<ApacheIcon width="22" height="22" />
+				</Chip>
+				<Chip label="Docker">
+					<DockerIcon width="22" height="22" />
 				</Chip>
 			</Fragment>
 		</LargeCard>

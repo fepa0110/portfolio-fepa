@@ -1,9 +1,4 @@
 ---
-import GithubIcon from "./icons/GithubIcon.astro";
-import type { Link } from "../types/Link";
-import CarouselReact from "./carousel/CarouselReact";
-import type { SlideData } from "../types/SlideData";
-import type { Experiencia } from "../types/Experiencia";
 import type { Formacion } from "../types/Formacion";
 
 interface Props {
@@ -27,6 +22,9 @@ const { formaciones } = Astro.props;
 					</h3>
 					<p class="mb-4 text-base font-normal text-cyan-700">
 						{formacion.institucion}
+					</p>
+					<p class="mb-4 text-base font-normal text-zinc-100">
+						{formacion.descripcion}
 					</p>
 				</li>
 			);

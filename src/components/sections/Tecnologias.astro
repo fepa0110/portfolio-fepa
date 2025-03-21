@@ -14,10 +14,11 @@ import TechCard from "../TechCard.astro";
 	<h2 class="text-xl font-semibold pb-4">Tecnologias</h2>
 
 	<div
-		class="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 ml-4 md:ml-16 items-center place-items-center content-center gap-16 my-3">
+		class="grid grid-cols-2 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-5 ml-0 md:ml-16 items-center place-items-center content-center gap-6 sm:gap-16 my-3">
 		<section
-			class="col-span-3 grid grid-cols-subgrid place-items-center gap-3 content-between items-baseline pt-3 pb-5 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
-			<div class="col-start-1 col-end-4 justify-self-start px-3">
+			class="w-full col-span-2 sm:col-span-3 md:col-span-4 grid grid-cols-subgrid place-items-center gap-3 content-between items-baseline pt-3 pb-5 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
+			<div
+				class="col-start-1 col-end-4 md:col-end-5 justify-self-start px-3">
 				<span class="text-base text-primary">Frontend</span>
 			</div>
 
@@ -53,8 +54,9 @@ import TechCard from "../TechCard.astro";
 		</section>
 
 		<section
-			class="col-span-3 grid grid-cols-subgrid place-items-center content-between items-baseline pt-3 pb-5 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
-			<div class="col-start-1 col-end-4 justify-self-start px-3">
+			class="col-span-2 sm:col-span-3 md:col-span-3 grid grid-cols-subgrid place-items-center content-between items-baseline pt-3 pb-5 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
+			<div
+				class="col-start-1 col-end-4 md:col-end-5 justify-self-start px-3">
 				<span class="text-base text-primary">Backend</span>
 			</div>
 
@@ -70,26 +72,26 @@ import TechCard from "../TechCard.astro";
 				</Fragment>
 			</TechCard>
 
-			<div class="">
-				<TechCard title="Python">
-					<Fragment slot="icon">
-						<PythonIcon height="52" width="52" />
-					</Fragment>
-				</TechCard>
-			</div>
+			<TechCard title="Python">
+				<Fragment slot="icon">
+					<PythonIcon height="52" width="52" />
+				</Fragment>
+			</TechCard>
 		</section>
 
 		<section
-			class="col-span-1 grid grid-cols-subgrid place-items-center content-between items-baseline py-3 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
-			<div class="col-start-1 justify-self-start px-3 pb-1">
+			class="sm:col-start-2 col-span-1 md:col-span-2 grid grid-cols-subgrid place-items-center content-between items-baseline py-3 rounded-lg border-2 border-primary border-dashed backdrop-blur-md">
+			<div class="col-start-1 md:col-end-5 justify-self-start px-3 pb-1">
 				<span class="text-base text-primary">Bases de datos</span>
 			</div>
 
-			<TechCard title="PostgreSQL">
-				<Fragment slot="icon">
-					<PostgreSQLIcon height="56" width="56" />
-				</Fragment>
-			</TechCard>
+			<div class="md:col-start-1 md:col-end-3">
+				<TechCard title="PostgreSQL">
+					<Fragment slot="icon">
+						<PostgreSQLIcon height="56" width="56" />
+					</Fragment>
+				</TechCard>
+			</div>
 		</section>
 	</div>
 </section>

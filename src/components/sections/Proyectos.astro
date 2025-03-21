@@ -1,17 +1,21 @@
 ---
+import { Image } from "astro:assets";
+
 import type { Link } from "../../types/Link";
 import type { SlideData } from "../../types/SlideData";
-import { Image } from "astro:assets";
-import traxpetIcon from "../assets/logoTraxpet.png";
-import turingMindIcon from "../assets/TuringMindIcon.png";
+import traxpetIcon from "../../assets/logoTraxpet.png";
+import turingMindIcon from "../../assets/TuringMindIcon.png";
+
 import Chip from "../Chip.astro";
 import JavaIcon from "../icons/JavaIcon.astro";
 import PythonIcon from "../icons/PythonIcon.astro";
+import ExpoIcon from "../icons/ExpoIcon.astro";
 import ReactIcon from "../icons/ReactIcon.astro";
 import TailwindIcon from "../icons/TailwindIcon.astro";
+
 import LargeCard from "../LargeCard.astro";
+
 import proyectosJson from "../../data/proyectos.json";
-import ExpoIcon from "../icons/ExpoIcon.astro";
 
 interface Proyecto {
 	title: string;

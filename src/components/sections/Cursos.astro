@@ -1,0 +1,19 @@
+---
+import type { Formacion } from "../../types/Formacion";
+import TimelineFormaciones from "../TimelineFormaciones.astro";
+
+const cursos: Formacion[] = [
+	{
+		fecha: "oct/2024",
+		titulo: "Deep Learning",
+		institucion: "CACIC 2024 - Universidad Nacional de La Plata",
+		descripcion: "Curso intensivo de 4 días donde se realizo una introducción a las Redes convolucionales, LLMs y procesamiento de imagenes con Redes convolucionales"	}
+];
+---
+
+<section class="mt-8" id="experienciaLaboral">
+	<h2 class="text-xl font-semibold">Cursos</h2>
+	<div class="w-full py-8 pl-16">
+		<TimelineFormaciones formaciones={cursos} />
+	</div>
+</section>

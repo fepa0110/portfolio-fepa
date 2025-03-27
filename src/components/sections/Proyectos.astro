@@ -18,6 +18,8 @@ import LargeCard from "../LargeCard.astro";
 import proyectosJson from "../../data/proyectos.json";
 import ApacheIcon from "../icons/ApacheIcon.astro";
 import DockerIcon from "../icons/DockerIcon.astro";
+import NextJsIcon from "../icons/NextJsIcon.astro";
+import SupabaseIcon from "../icons/SupabaseIcon.astro";
 
 interface Proyecto {
 	title: string;
@@ -95,6 +97,28 @@ const proyectos: Proyecto[] = proyectosJson;
 				</Chip>
 				<Chip label="Expo">
 					<ExpoIcon width="20" height="20" />
+				</Chip>
+			</Fragment>
+		</LargeCard>
+		<LargeCard
+			title={proyectos[3].title}
+			description={proyectos[3].description}
+			images={proyectos[3].images}
+			fecha={proyectos[3].fecha}
+			links={proyectos[3].links}
+			carouselSize={200}>
+			<Fragment slot="icon">
+
+			</Fragment>
+			<Fragment slot="tecnologias">
+				<Chip label="Next.js">
+					<NextJsIcon width="22" height="22" />
+				</Chip>
+				<Chip label="Tailwind CSS">
+					<TailwindIcon width="22" height="22" />
+				</Chip>
+				<Chip label="Supabase">
+					<SupabaseIcon width="20" height="20" />
 				</Chip>
 			</Fragment>
 		</LargeCard>

@@ -47,5 +47,28 @@
             "title": "Repositorio",
             "url": "https://github.com/fepa0110/TuringMind"
         }]
+    },
+    {
+        "title": "FunctionalLights",
+        "description": "Desarrollo de sistema de entrenamiento neurosenorial. Sistema distribuido compuesto por modulos luminosos de encendido remoto configurable y apagado por proximidad.",
+        "iconImg": "",
+        "images": [
+            
+        ],
+        "fecha": "2023 - Actualidad",
+        "links": []
+    },
+    {
+        "title": "GymManager",
+        "description": "Sistema para gestión de cuotas y rutinas de clientes de un gimnasio. Proyecto para fortalecer habilidades en NextJS y Supabase.",
+        "iconImg": "",
+        "images": [
+            {"src":"/GymManagerHome.jpg", "width": 256, "height": 256}
+        ],
+        "fecha": "",
+        "links": [{
+            "title": "Repositorio",
+            "url": "https://github.com/fepa0110/gym-manager"
+        }]
     }
 ]

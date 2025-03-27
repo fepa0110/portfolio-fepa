@@ -10,9 +10,10 @@ interface Props {
 	description: string;
 	fecha: string;
 	links: Link[];
+	carouselSize?: number;
 }
 
-const { images, title, description, fecha, links } = Astro.props;
+const { images, title, description, fecha, links, carouselSize = 120 } = Astro.props;
 ---
 
 <article
@@ -27,7 +28,7 @@ const { images, title, description, fecha, links } = Astro.props;
 
 	<section class="flex flex-col md:justify-between md:flex-row w-full py-3">
 		<div class="flex flex-col pl-3 py-2 justify-center items-center">
-			<CarouselReact images={images} width={120} client:load />
+			<CarouselReact images={images} width={carouselSize} client:load />
 		</div>
 		<div class="flex flex-1 flex-col w-full justify-between">
 			<div class="border-s p-4 border-l-transparent sm:px-6">

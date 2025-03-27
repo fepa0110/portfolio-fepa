@@ -1,5 +1,6 @@
 ---
 import ButtonToTop from "../components/ButtonToTop.astro";
+import Footer from "../components/Footer.astro";
 import Header from "../components/Header.astro";
 import "../styles/global.css";
 ---
@@ -70,7 +71,9 @@ import "../styles/global.css";
 
 	<body class="w-full h-full bg-zinc-900 text-slate-300 px-8">
 		<ButtonToTop />
+		<Header />
 		<slot />
+		<Footer />
 	</body>
 </html>
 

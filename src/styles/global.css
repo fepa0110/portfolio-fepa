@@ -4,5 +4,10 @@
 
 @theme {
   --color-primary: var(--color-cyan-600);
+  --color-title: var(--color-zinc-100);
+  --color-subtitle: var(--color-cyan-700);
+  --color-subtitleVariant: var(--color-zinc-400);
+  --color-paragraph: var(--color-zinc-200);
+  --color-outline: var(--color-zinc-400);
   --color-background: var(--color-zinc-900);
 }

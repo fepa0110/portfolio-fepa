@@ -8,28 +8,28 @@ interface Props {
 const { formaciones } = Astro.props;
 ---
 
-<ol class="relative border-s-2 border-cyan-600">
+<ol class="relative border-s-2 border-primary">
 	{
 		formaciones.map((formacion) => {
 			return (
 				<li class="mb-10 ms-4">
 					<div class="flex flex-row items-center pt-1.5">
 						<span class="absolute flex size-3 -translate-x-[23px]">
-							<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-cyan-500 opacity-75" />
-							<span class="relative inline-flex size-3 rounded-full bg-cyan-600" />
+							<span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary/90 opacity-75" />
+							<span class="relative inline-flex size-3 rounded-full bg-primary" />
 						</span>
 
-						<time class="text-sm font-normal leading-none text-gray-400 dark:text-gray-500">
+						<time class="text-sm font-normal leading-none text-outline dark:text-outline">
 							{formacion.fecha}
 						</time>
 					</div>
-					<h3 class="mt-2 text-lg font-semibold text-white">
+					<h3 class="mt-2 text-lg font-semibold text-title">
 						{formacion.titulo}
 					</h3>
-					<p class="mb-3 text-base font-normal text-cyan-700">
+					<p class="mb-3 text-base font-normal text-subtitle">
 						{formacion.institucion}
 					</p>
-					<p class="mb-4 text-base font-normal text-zinc-100">
+					<p class="mb-4 text-base font-normal text-paragraph">
 						{formacion.descripcion}
 					</p>
 				</li>
